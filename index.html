@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Your one-stop destination for free online tools. Compress images, convert PDFs, and more!">
+    <meta name="keywords" content="online tools, image tools, PDF tools, compress images, convert PDFs">
+    <meta name="author" content="Your Name">
+    <title>Online Tools - Free Image and PDF Tools</title>
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_SENSE_ID" crossorigin="anonymous"></script>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header and Navigation */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            font-size: 1.1rem;
+            transition: opacity 0.3s ease;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #4CAF50;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin: 10px 0 0;
+        }
+
+        /* Tools Grid Section */
+        .tools-grid {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .tool-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .tool-card img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+        }
+
+        .tool-card h3 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        .tool-card p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .tool-card a {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .tool-card a:hover {
+            background-color: #45a049;
+        }
+
+        /* Tool Sections */
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Upload Section */
+        .upload-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+            margin-top: 20px; /* Added spacing */
+        }
+
+        .file-input-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .file-input-label {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .file-input-label:hover {
+            background-color: #45a049;
+        }
+
+        .file-name {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .action-btn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .action-btn:hover {
+            background-color: #45a049;
+        }
+
+        /* Result Section */
+        .result-section {
+            text-align: center;
+            margin-top: 20px;
+            display: none; /* Hidden by default */
+        }
+
+        .download-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-link:hover {
+            background-color: #45a049;
+        }
+
+        /* Ad Section */
+        .ad-section {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .file-input-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .file-input-label, .action-btn, .download-link {
+                width: 100%;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Online Tools</h1>
+        <nav>
+            <a href="#image-tools">Image Tools</a>
+            <a href="#pdf-tools">PDF Tools</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>Your One-Stop Destination for Free Online Tools</h2>
+        <p>Compress images, convert PDFs, and more!</p>
+    </section>
+
+    <!-- Tools Grid Section -->
+    <section class="tools-grid">
+        <!-- Image Compression Tool -->
+        <div class="tool-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/2917/2917636.png" alt="Image Compression">
+            <h3>Image Compression</h3>
+            <p>Compress images to reduce file size without losing quality.</p>
+            <a href="#image-compression" style="text-decoration: none;">
+                <button class="action-btn">Use Tool</button>
+            </a>
+        </div>
+
+        <!-- PDF Merge Tool -->
+        <div class="tool-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Merge">
+            <h3>PDF Merge</h3>
+            <p>Combine multiple PDF files into a single document.</p>
+            <a href="#pdf-merge" style="text-decoration: none;">
+                <button class="action-btn">Use Tool</button>
+            </a>
+        </div>
+
+        <!-- Image Resize Tool -->
+        <div class="tool-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/2917/2917636.png" alt="Image Resize">
+            <h3>Image Resize</h3>
+            <p>Resize images to your desired dimensions.</p>
+            <a href="#image-resize" style="text-decoration: none;">
+                <button class="action-btn">Use Tool</button>
+            </a>
+        </div>
+
+        <!-- PDF Split Tool -->
+        <div class="tool-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF Split">
+            <h3>PDF Split</h3>
+            <p>Split a PDF into multiple smaller files.</p>
+            <a href="#pdf-split" style="text-decoration: none;">
+                <button class="action-btn">Use Tool</button>
+            </a>
+        </div>
+
+        <!-- Image Converter Tool -->
+        <div class="tool-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/2917/2917636.png" alt="Image Converter">
+            <h3>Image Converter</h3>
+            <p>Convert images to different formats (JPG, PNG, etc.).</p>
+            <a href="#image-converter" style="text-decoration: none;">
+                <button class="action-btn">Use Tool</button>
+            </a>
+        </div>
+
+        <!-- PDF to Word Tool -->
+        <div class="tool-card">
+            <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" alt="PDF to Word">
+            <h3>PDF to Word</h3>
+            <p>Convert PDF files to editable Word documents.</p>
+            <a href="#pdf-to-word" style="text-decoration: none;">
+                <button class="action-btn">Use Tool</button>
+            </a>
+        </div>
+    </section>
+
+    <!-- Image Compression Tool Section -->
+    <section id="image-compression">
+        <main>
+            <header>
+                <h1>Image Compression Tool</h1>
+                <p>Optimize your images for web use with adjustable compression levels.</p>
+            </header>
+
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <div class="file-input-container">
+                    <label for="image-input" class="file-input-label">Choose File</label>
+                    <span id="image-file-name" class="file-name">No file chosen</span>
+                </div>
+                <input type="file" id="image-input" accept="image/*" style="display: none;">
+                <label for="compression-level">Compression Level:</label>
+                <select id="compression-level">
+                    <option value="0.1">Low</option>
+                    <option value="0.5" selected>Medium</option>
+                    <option value="0.9">High</option>
+                </select>
+                <button id="compress-btn" class="action-btn">Compress Image</button>
+            </section>
+
+            <!-- Result Section -->
+            <section class="result-section" id="image-result-section">
+                <h2>Compressed Image</h2>
+                <img id="compressed-image" src="" alt="Compressed Image">
+                <a id="image-download-link" class="download-link" href="#" download="compressed-image.jpg">Download Compressed Image</a>
+            </section>
+
+            <!-- AdSense Ad Unit -->
+            <section class="ad-section">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_SENSE_ID" crossorigin="anonymous"></script>
+                <!-- Your Ad Unit -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-YOUR_AD_SENSE_ID"
+                     data-ad-slot="YOUR_AD_SLOT_ID"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </section>
+        </main>
+    </section>
+
+    <!-- PDF Merge Tool Section -->
+    <section id="pdf-merge">
+        <main>
+            <header>
+                <h1>PDF Merge Tool</h1>
+                <p>Combine multiple PDF files into a single document.</p>
+            </header>
+
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <div class="file-input-container">
+                    <label for="pdf-merge-input" class="file-input-label">Choose Files</label>
+                    <span id="pdf-merge-file-name" class="file-name">No files chosen</span>
+                </div>
+                <input type="file" id="pdf-merge-input" accept="application/pdf" multiple style="display: none;">
+                <button id="merge-btn" class="action-btn">Merge PDFs</button>
+            </section>
+
+            <!-- Result Section -->
+            <section class="result-section" id="pdf-merge-result-section">
+                <h2>Merged PDF</h2>
+                <a id="pdf-merge-download-link" class="download-link" href="#" download="merged-document.pdf">Download Merged PDF</a>
+            </section>
+
+            <!-- AdSense Ad Unit -->
+            <section class="ad-section">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_SENSE_ID" crossorigin="anonymous"></script>
+                <!-- Your Ad Unit -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-YOUR_AD_SENSE_ID"
+                     data-ad-slot="YOUR_AD_SLOT_ID"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </section>
+        </main>
+    </section>
+
+    <!-- Image Resize Tool Section -->
+    <section id="image-resize">
+        <main>
+            <header>
+                <h1>Image Resize Tool</h1>
+                <p>Resize images to your desired dimensions.</p>
+            </header>
+
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <div class="file-input-container">
+                    <label for="image-resize-input" class="file-input-label">Choose File</label>
+                    <span id="image-resize-file-name" class="file-name">No file chosen</span>
+                </div>
+                <input type="file" id="image-resize-input" accept="image/*" style="display: none;">
+                <label for="resize-width">Width:</label>
+                <input type="number" id="resize-width" placeholder="Enter width in pixels">
+                <label for="resize-height">Height:</label>
+                <input type="number" id="resize-height" placeholder="Enter height in pixels">
+                <button id="resize-btn" class="action-btn">Resize Image</button>
+            </section>
+
+            <!-- Result Section -->
+            <section class="result-section" id="image-resize-result-section">
+                <h2>Resized Image</h2>
+                <img id="resized-image" src="" alt="Resized Image">
+                <a id="image-resize-download-link" class="download-link" href="#" download="resized-image.jpg">Download Resized Image</a>
+            </section>
+
+            <!-- AdSense Ad Unit -->
+            <section class="ad-section">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_SENSE_ID" crossorigin="anonymous"></script>
+                <!-- Your Ad Unit -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-YOUR_AD_SENSE_ID"
+                     data-ad-slot="YOUR_AD_SLOT_ID"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </section>
+        </main>
+    </section>
+
+    <!-- PDF Split Tool Section -->
+    <section id="pdf-split">
+        <main>
+            <header>
+                <h1>PDF Split Tool</h1>
+                <p>Split a PDF into multiple smaller files.</p>
+            </header>
+
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <div class="file-input-container">
+                    <label for="pdf-split-input" class="file-input-label">Choose File</label>
+                    <span id="pdf-split-file-name" class="file-name">No file chosen</span>
+                </div>
+                <input type="file" id="pdf-split-input" accept="application/pdf" style="display: none;">
+                <label for="split-range">Page Range (e.g., 1-3,5):</label>
+                <input type="text" id="split-range" placeholder="Enter page range">
+                <button id="split-btn" class="action-btn">Split PDF</button>
+            </section>
+
+            <!-- Result Section -->
+            <section class="result-section" id="pdf-split-result-section">
+                <h2>Split PDF Files</h2>
+                <div id="split-download-links"></div>
+            </section>
+
+            <!-- AdSense Ad Unit -->
+            <section class="ad-section">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_SENSE_ID" crossorigin="anonymous"></script>
+                <!-- Your Ad Unit -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-YOUR_AD_SENSE_ID"
+                     data-ad-slot="YOUR_AD_SLOT_ID"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </section>
+        </main>
+    </section>
+
+    <!-- Image Converter Tool Section -->
+    <section id="image-converter">
+        <main>
+            <header>
+                <h1>Image Converter Tool</h1>
+                <p>Convert images to different formats (JPG, PNG, etc.).</p>
+            </header>
+
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <div class="file-input-container">
+                    <label for="image-converter-input" class="file-input-label">Choose File</label>
+                    <span id="image-converter-file-name" class="file-name">No file chosen</span>
+                </div>
+                <input type="file" id="image-converter-input" accept="image/*" style="display: none;">
+                <label for="converter-format">Convert to:</label>
+                <select id="converter-format">
+                    <option value="jpg">JPG</option>
+                    <option value="png">PNG</option>
+                    <option value="webp">WEBP</option>
+                </select>
+                <button id="convert-image-btn" class="action-btn">Convert Image</button>
+            </section>
+
+            <!-- Result Section -->
+            <section class="result-section" id="image-converter-result-section">
+                <h2>Converted Image</h2>
+                <img id="converted-image" src="" alt="Converted Image">
+                <a id="image-converter-download-link" class="download-link" href="#" download="converted-image">Download Converted Image</a>
+            </section>
+
+            <!-- AdSense Ad Unit -->
+            <section class="ad-section">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_SENSE_ID" crossorigin="anonymous"></script>
+                <!-- Your Ad Unit -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-YOUR_AD_SENSE_ID"
+                     data-ad-slot="YOUR_AD_SLOT_ID"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </section>
+        </main>
+    </section>
+
+    <!-- PDF to Word Tool Section -->
+    <section id="pdf-to-word">
+        <main>
+            <header>
+                <h1>PDF to Word Converter</h1>
+                <p>Convert your PDF files to editable Word documents.</p>
+            </header>
+
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <div class="file-input-container">
+                    <label for="pdf-to-word-input" class="file-input-label">Choose File</label>
+                    <span id="pdf-to-word-file-name" class="file-name">No file chosen</span>
+                </div>
+                <input type="file" id="pdf-to-word-input" accept="application/pdf" style="display: none;">
+                <button id="convert-pdf-btn" class="action-btn">Convert to Word</button>
+            </section>
+
+            <!-- Result Section -->
+            <section class="result-section" id="pdf-to-word-result-section">
+                <h2>Converted Word Document</h2>
+                <a id="pdf-to-word-download-link" class="download-link" href="#" download="converted-document.docx">Download Word Document</a>
+            </section>
+
+            <!-- AdSense Ad Unit -->
+            <section class="ad-section">
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_AD_SENSE_ID" crossorigin="anonymous"></script>
+                <!-- Your Ad Unit -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-YOUR_AD_SENSE_ID"
+                     data-ad-slot="YOUR_AD_SLOT_ID"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+                <script>
+                     (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </section>
+        </main>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Online Tools. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript Functionality for Image Compression Tool
+        const imageInput = document.getElementById('image-input');
+        const imageFileNameDisplay = document.getElementById('image-file-name');
+
+        imageInput.addEventListener('change', function() {
+            if (imageInput.files.length > 0) {
+                imageFileNameDisplay.textContent = imageInput.files[0].name;
+            } else {
+                imageFileNameDisplay.textContent = 'No file chosen';
+            }
+        });
+
+        document.getElementById('compress-btn').addEventListener('click', function() {
+            const compressionLevel = parseFloat(document.getElementById('compression-level').value);
+            const resultSection = document.getElementById('image-result-section');
+            const compressedImage = document.getElementById('compressed-image');
+            const downloadLink = document.getElementById('image-download-link');
+
+            if (imageInput.files.length === 0) {
+                alert('Please select an image to compress.');
+                return;
+            }
+
+            const file = imageInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(event) {
+                const img = new Image();
+                img.src = event.target.result;
+
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+
+                    ctx.drawImage(img, 0, 0);
+
+                    canvas.toBlob(function(blob) {
+                        const compressedUrl = URL.createObjectURL(blob);
+                        compressedImage.src = compressedUrl;
+                        downloadLink.href = compressedUrl;
+                        resultSection.style.display = 'block';
+                    }, 'image/jpeg', compressionLevel);
+                };
+            };
+
+            reader.readAsDataURL(file);
+        });
+
+        // JavaScript Functionality for PDF Merge Tool
+        const pdfMergeInput = document.getElementById('pdf-merge-input');
+        const pdfMergeFileNameDisplay = document.getElementById('pdf-merge-file-name');
+
+        pdfMergeInput.addEventListener('change', function() {
+            if (pdfMergeInput.files.length > 0) {
+                pdfMergeFileNameDisplay.textContent = `${pdfMergeInput.files.length} files chosen`;
+            } else {
+                pdfMergeFileNameDisplay.textContent = 'No files chosen';
+            }
+        });
+
+        document.getElementById('merge-btn').addEventListener('click', function() {
+            const resultSection = document.getElementById('pdf-merge-result-section');
+            const downloadLink = document.getElementById('pdf-merge-download-link');
+
+            if (pdfMergeInput.files.length === 0) {
+                alert('Please select PDF files to merge.');
+                return;
+            }
+
+            // Simulate merging (replace with actual backend API call)
+            const mergedUrl = URL.createObjectURL(new Blob(['Simulated merged PDF content'], { type: 'application/pdf' }));
+            downloadLink.href = mergedUrl;
+            resultSection.style.display = 'block';
+        });
+
+        // JavaScript Functionality for Image Resize Tool
+        const imageResizeInput = document.getElementById('image-resize-input');
+        const imageResizeFileNameDisplay = document.getElementById('image-resize-file-name');
+
+        imageResizeInput.addEventListener('change', function() {
+            if (imageResizeInput.files.length > 0) {
+                imageResizeFileNameDisplay.textContent = imageResizeInput.files[0].name;
+            } else {
+                imageResizeFileNameDisplay.textContent = 'No file chosen';
+            }
+        });
+
+        document.getElementById('resize-btn').addEventListener('click', function() {
+            const width = parseInt(document.getElementById('resize-width').value);
+            const height = parseInt(document.getElementById('resize-height').value);
+            const resultSection = document.getElementById('image-resize-result-section');
+            const resizedImage = document.getElementById('resized-image');
+            const downloadLink = document.getElementById('image-resize-download-link');
+
+            if (imageResizeInput.files.length === 0) {
+                alert('Please select an image to resize.');
+                return;
+            }
+
+            if (!width || !height) {
+                alert('Please enter valid width and height values.');
+                return;
+            }
+
+            const file = imageResizeInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(event) {
+                const img = new Image();
+                img.src = event.target.result;
+
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+
+                    canvas.width = width;
+                    canvas.height = height;
+
+                    ctx.drawImage(img, 0, 0, width, height);
+
+                    canvas.toBlob(function(blob) {
+                        const resizedUrl = URL.createObjectURL(blob);
+                        resizedImage.src = resizedUrl;
+                        downloadLink.href = resizedUrl;
+                        resultSection.style.display = 'block';
+                    }, 'image/jpeg');
+                };
+            };
+
+            reader.readAsDataURL(file);
+        });
+
+        // JavaScript Functionality for PDF Split Tool
+        const pdfSplitInput = document.getElementById('pdf-split-input');
+        const pdfSplitFileNameDisplay = document.getElementById('pdf-split-file-name');
+
+        pdfSplitInput.addEventListener('change', function() {
+            if (pdfSplitInput.files.length > 0) {
+                pdfSplitFileNameDisplay.textContent = pdfSplitInput.files[0].name;
+            } else {
+                pdfSplitFileNameDisplay.textContent = 'No file chosen';
+            }
+        });
+
+        document.getElementById('split-btn').addEventListener('click', function() {
+            const pageRange = document.getElementById('split-range').value;
+            const resultSection = document.getElementById('pdf-split-result-section');
+            const downloadLinksContainer = document.getElementById('split-download-links');
+
+            if (pdfSplitInput.files.length === 0) {
+                alert('Please select a PDF file to split.');
+                return;
+            }
+
+            if (!pageRange) {
+                alert('Please enter a valid page range.');
+                return;
+            }
+
+            // Simulate splitting (replace with actual backend API call)
+            downloadLinksContainer.innerHTML = `<a class="download-link" href="#" download="split-document-1.pdf">Download Part 1</a>
+                                               <a class="download-link" href="#" download="split-document-2.pdf">Download Part 2</a>`;
+            resultSection.style.display = 'block';
+        });
+
+        // JavaScript Functionality for Image Converter Tool
+        const imageConverterInput = document.getElementById('image-converter-input');
+        const imageConverterFileNameDisplay = document.getElementById('image-converter-file-name');
+
+        imageConverterInput.addEventListener('change', function() {
+            if (imageConverterInput.files.length > 0) {
+                imageConverterFileNameDisplay.textContent = imageConverterInput.files[0].name;
+            } else {
+                imageConverterFileNameDisplay.textContent = 'No file chosen';
+            }
+        });
+
+        document.getElementById('convert-image-btn').addEventListener('click', function() {
+            const format = document.getElementById('converter-format').value;
+            const resultSection = document.getElementById('image-converter-result-section');
+            const convertedImage = document.getElementById('converted-image');
+            const downloadLink = document.getElementById('image-converter-download-link');
+
+            if (imageConverterInput.files.length === 0) {
+                alert('Please select an image to convert.');
+                return;
+            }
+
+            const file = imageConverterInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(event) {
+                const img = new Image();
+                img.src = event.target.result;
+
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+
+                    ctx.drawImage(img, 0, 0);
+
+                    canvas.toBlob(function(blob) {
+                        const convertedUrl = URL.createObjectURL(blob);
+                        convertedImage.src = convertedUrl;
+                        downloadLink.href = convertedUrl;
+                        downloadLink.download = `converted-image.${format}`;
+                        resultSection.style.display = 'block';
+                    }, `image/${format}`);
+                };
+            };
+
+            reader.readAsDataURL(file);
+        });
+
+        // JavaScript Functionality for PDF to Word Tool
+        const pdfToWordInput = document.getElementById('pdf-to-word-input');
+        const pdfToWordFileNameDisplay = document.getElementById('pdf-to-word-file-name');
+
+        pdfToWordInput.addEventListener('change', function() {
+            if (pdfToWordInput.files.length > 0) {
+                pdfToWordFileNameDisplay.textContent = pdfToWordInput.files[0].name;
+            } else {
+                pdfToWordFileNameDisplay.textContent = 'No file chosen';
+            }
+        });
+
+        document.getElementById('convert-pdf-btn').addEventListener('click', function() {
+            const resultSection = document.getElementById('pdf-to-word-result-section');
+            const downloadLink = document.getElementById('pdf-to-word-download-link');
+
+            if (pdfToWordInput.files.length === 0) {
+                alert('Please select a PDF file to convert.');
+                return;
+            }
+
+            // Simulate conversion (replace with actual backend API call)
+            const convertedUrl = URL.createObjectURL(new Blob(['Simulated Word document content'], { type: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' }));
+            downloadLink.href = convertedUrl;
+            resultSection.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
